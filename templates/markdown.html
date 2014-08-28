@@ -1,0 +1,33 @@
+$def with (content, meta, rawlink)
+
+<html>
+<head>
+    $if meta.has_key('title'):
+        <title>$meta['title']</title> 
+
+<link ref="stylesheet" type="text/css" href="/homebrew/markdown.css" />
+<style>
+hr.bottomsep {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
+}
+a.rawlink {
+    font-size: 10pt;
+    font-decoration: none;
+    text-align:right;
+    display:block;
+    color: rgba(0,0,0,.3)
+}
+</style>
+</head>
+<body>
+$:content
+
+<hr class="bottomsep"/>
+<a class="rawlink" href="/$rawlink">[raw]</a>
+</body>
+</html>

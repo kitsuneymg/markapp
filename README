@@ -1,0 +1,3 @@
+A simple web.py application to process .markdown files
+
+Note: the nginx rules used to pass files to this web app for processing ensure that only files that end in ".md" or ".md/raw" are processed. Thus, the `/(.*/)?` pattern is only ever meant to be called when an index.md is present.
