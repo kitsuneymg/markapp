@@ -11,7 +11,9 @@ urls = (
     "/(.*\.md)/raw", 'Raw',
     "/(.*/)?", 'Index',
 )
-md = markdown.Markdown(extensions=['tables','toc','attr_list','footnotes','meta', 'def_list'])
+
+def getMarkdown():
+    return markdown.Markdown(extensions=['tables','toc','attr_list','footnotes','meta', 'def_list'])
 
 render = web.template.render(
 	os.path.dirname(os.path.abspath(__file__))+'/templates'
@@ -41,6 +43,7 @@ class Markdown :
         input_file = codecs.open(input_file, mode="r", encoding="utf-8")
         unicode_content=input_file.read()
         md_content=unicode_content.encode('ascii', 'xmlcharrefreplace')
+        md = getMarkdown()
         content = md.convert(md_content)
         meta = md.Meta
         return render.markdown(content, meta, input_filename+"/raw")

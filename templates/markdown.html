@@ -14,20 +14,49 @@ hr.bottomsep {
     background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
     background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0)); 
+    padding-bottom:0;
+    margin-top:0;
 }
 a.rawlink {
-    font-size: 10pt;
     font-decoration: none;
-    text-align:right;
-    display:block;
+    font-size: 10pt;
     color: rgba(0,0,0,.3)
+}
+
+body {
+    margin-bottom:0;
+}
+
+#content-container {
+    min-height: 100%;
+}
+
+#content {
+    padding-bottom:2em;
+}
+
+#footer {
+    clear: both;
+    position: relative;
+    z-index:10;
+    height: 2em;
+    padding:0;
+margin:0;
+    margin-top: -2em;
+    width:100%;
+    text-align:right;
 }
 </style>
 </head>
 <body>
+<div id="content-container">
+<section id="content">
 $:content
-
+</section>
+</div>
+<section id="footer">
 <hr class="bottomsep"/>
 <a class="rawlink" href="/$rawlink">[raw]</a>
+</section>
 </body>
 </html>
