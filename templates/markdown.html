@@ -3,7 +3,7 @@ $def with (content, meta, rawlink)
 <html>
 <head>
     $if meta.has_key('title'):
-        <title>$meta['title']</title> 
+        <title>$meta['title'][0].encode('ascii', 'xmlcharrefreplace')</title> 
 
 <link rel="stylesheet" type="text/css" href="/homebrew/markdown.css" />
 <style>
